@@ -53,7 +53,7 @@ source ~/.bashrc
 
 Next time you open the shell the values will be automatically "sourced" or set.
 
-The VM size DS2_v2 is 2 cores (vCPU), 7 GiB RAM (see: https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general#dsv2-series)
+The VM size `DS2_v2` is 2 cores (vCPU), 7 GiB RAM (see: https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general#dsv2-series)
 
 Now wait for the 3 VMs to be created…will take about 15 mins.
 Use this wait time to familiarise yourselves with the tutorial, try reading some of the links presented.
@@ -96,7 +96,7 @@ kubectl port-forward data-api-695ddc577-xr9qc 8080:4000
 
 Then press `CTRL+Z` to break to the shell then type `bg` to put the forwarding process into the background and let it continue running.
 
-Now  access the Data API:
+Now access the Data API:
 
 ```
 curl localhost:8080/api/info | jq .
@@ -140,6 +140,8 @@ az aks browse -g $group -n aks-cluster --enable-cloud-console-aks-browse
 ## Kubernetes: Extra Optional Exercises
 
 You can try out any of the optional exercises on your own.
+
+### Extra Exercise - Ingress Routing, Ingress Controllers, Cert-Manager
 
 If you prefer, you can try this extra one which will introduce the Ingress object and TLS termination so you can get a friendly URL for your Smilr app and have that endpoint run over SSL/TLS and be trusted by the browser!
 
