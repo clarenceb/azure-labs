@@ -30,13 +30,13 @@ docker image ls
 Run the backend container:
 
 ```
-docker run -d -p 6379:6379 redis azure-vote-back
+docker run -d -p 6379:6379 --name azure-vote-back redis:latest
 ```
 
 Run the frontend container:
 
 ```
-docker run -d -p 8080:80 --env REDIS=azure-vote-back azure-vote-front
+docker run -d -p 8080:80 --env REDIS=azure-vote-back --name azure-vote-front azure-vote-front:latest
 ```
 
 Check running containers:
