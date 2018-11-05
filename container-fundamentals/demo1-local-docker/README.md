@@ -36,7 +36,11 @@ docker run -d -p 6379:6379 --name azure-vote-back redis:latest
 Run the frontend container:
 
 ```
-docker run -d -p 8080:80 --env REDIS=azure-vote-back --name azure-vote-front azure-vote-front:latest
+# Get IP address of redis container
+docker inspect azure-vote-back
+
+# Run frontend container with volatile container IP
+docker run -d -p 8080:80 --env REDIS=<redis_ip_address> --name azure-vote-front azure-vote-front:latest
 ```
 
 Check running containers:
@@ -57,6 +61,8 @@ docker rm -f azure-vote-front
 ```
 
 ## Optional: Docker-Compose
+
+Docker Compose support service name resolution (so no ip address needed).
 
 ```
 docker-compose up
