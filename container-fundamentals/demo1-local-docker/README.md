@@ -1,24 +1,24 @@
 # Demo 1 - Running a container locally on Docker
 
-## Running containers with Docker
+## Running container with Docker
 
 Get the sample code:
 
 ```
-git clone https://github.com/Azure-Samples/azure-voting-app-redis.git
-cd azure-voting-app-redis
+git clone https://github.com/clarenceb/docker-django-webapp-linux
+cd docker-django-webapp-linux
 ```
 
-Pull the redis image for backend:
+Pull the base image (optional):
 
 ```
-docker pull redis
+docker pull python:3.4
 ```
 
-Build the frontend container:
+Build the container (using the `Dockerfile`):
 
 ```
-docker build -t azure-vote-front azure-vote/
+docker build -t webapp-linux .
 ```
 
 Check cached local Docker images:
@@ -27,20 +27,10 @@ Check cached local Docker images:
 docker image ls
 ```
 
-Run the backend container:
+Run the container:
 
 ```
-docker run -d -p 6379:6379 --name azure-vote-back redis:latest
-```
-
-Run the frontend container:
-
-```
-# Get IP address of redis container
-docker inspect azure-vote-back
-
-# Run frontend container with volatile container IP
-docker run -d -p 8080:80 --env REDIS=<redis_ip_address> --name azure-vote-front azure-vote-front:latest
+docker run -d -p 8080:8000 --name webapp webapp-linux
 ```
 
 Check running containers:
@@ -53,25 +43,37 @@ Test the web app locally:
 
 Browse to http://localhost:8080
 
+Tail the logs:
+
+```
+docker logs -f webapp
+```
+
+Re-load the browser tab.
+
+Check logs in terminal.
+
+Exit with `CTRL+C`
+
+Exec into container:
+
+```
+docker exec -ti webapp bash
+```
+
+Run some commands in container:
+
+```
+cat /etc/os-release
+ps -ef
+top # 'q' to exit top
+```
+
+Exit container with `exit`.
+
 Cleanup:
 
 ```
-docker rm -f azure-vote-back
-docker rm -f azure-vote-front
+docker rm -f webapp
 ```
 
-## Optional: Docker-Compose
-
-Docker Compose support service name resolution (so no ip address needed).
-
-```
-docker-compose up
-```
-
-Show `docker-compose.yml`
-
-Test the web app locally:
-
-Browse to http://localhost:8080
-
-`CTRL+C` to exit docker-compose.
