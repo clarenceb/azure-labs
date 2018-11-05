@@ -2,37 +2,44 @@
 
 *Expected timings: 115 mins (1hr 55 mins) for Intro and Modules 1 - 6*
 
-URL: https://azurecitadel.github.io/labs/kubernetes/
+Hands-on lab URL: https://azurecitadel.github.io/labs/kubernetes/
 
 ## Instructions
 
 Follow along with the Kubernetes lab (https://azurecitadel.github.io/labs/kubernetes/) and refer to these notes for any additional info or differences to the way we will run the lab.  The main difference will be that we will run all commands from the [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
 
 ## Pre-requisites:
-	- Azure Subscription
+
+* Azure Subscription
 
 ## Assumptions:
-	- Use Azure Cloud Shell in browser
+
+* Use Azure Cloud Shell in browser
 
 ## Initial steps:
-	- Login into Azure portal (https://portal.azure.com) with your provided subscription details
-	- Open/setup Azure Cloud Shell by click the shell icon on the top toolbar
-	- Use bash shell (not powershell)
-	- Verify your subscription is selected (type: `az account show`)
-	- Open the follow URL in another browser tab: https://azurecitadel.github.io/labs/kubernetes/
-	- Start the labs modules!
+
+* Login into Azure portal (https://portal.azure.com) with your provided subscription details
+* Open/setup Azure Cloud Shell by click the shell icon on the top toolbar
+* Use bash shell (not powershell)
+* Verify your subscription is selected (type: `az account show`)
+* Open the follow URL in another browser tab: https://azurecitadel.github.io/labs/kubernetes/
+* Start the labs modules!
 
 ## Intro, setup, etc. - 10 mins
+
+[Direct link to intro](https://azurecitadel.github.io/labs/kubernetes/)
 
 Go with "Option 2: Azure Cloud Shell" and that now includes VSCode (albeit simplified, e.g. no multiple tabs)
 
 ## Kubernetes: Module 1 - Deploying Kubernetes - 20 mins
 
-Registering Providers
+[Direct link to module 1](https://azurecitadel.github.io/labs/kubernetes/part1/)
+
+### Registering Providers
 
 Skip "Registering Providers" section as your subscription should have these registered.
 
-Deploying AKS
+### Deploying AKS
 
 Use `australiaest` for the region
 
@@ -70,9 +77,13 @@ Then open the kubernetes dashboard. CTRL+C to exit the dashboard.
 
 ## Kubernetes: Module 2 - Azure Container Registry (ACR) - 20 mins
 
+[Direct link to module 2](https://azurecitadel.github.io/labs/kubernetes/part2/)
+
 The other way (instead of creating an image pull secret) to grant AKS access to your private registry is to grant access to the service principle used by AKS.  This is explained in the lab  notes.
 
 ## Kubernetes: Module 3 - Deploying the Data Layer - 15 mins
+
+[Direct link to module 3](https://azurecitadel.github.io/labs/kubernetes/part3/)
 
 ### Deploy Data API
 
@@ -109,6 +120,8 @@ Then press `CTRL+C` to stop the port forwarding.
 
 ## Kubernetes: Module 4 - Services & Networking - 15 mins
 
+[Direct linkj to module 4](https://azurecitadel.github.io/labs/kubernetes/part4/)
+
 ### Create Service for Data API
 
 It can a few mins for the pubic IP to be assigned to the service. You can watch for updated like so:
@@ -123,11 +136,15 @@ Once you see the IP, you can access the service in your browser with that ip: ht
 
 ## Kubernetes: Module 5 - Deploying the Frontend - 15 mins
 
-Create Demo Data
+[Direct link to module 5](https://azurecitadel.github.io/labs/kubernetes/part5/)
+
+### Create Demo Data
 
 After loading the demo data, refresh the Smilr frontend in your browser to see some mock data.
 
 ## Kubernetes: Module 6 - Scaling & Persistence - 20 mins
+
+[Direct link to module 6](https://azurecitadel.github.io/labs/kubernetes/part6/)
 
 ### Scale Frontend
 
@@ -138,6 +155,8 @@ az aks browse -g $group -n aks-cluster --enable-cloud-console-aks-browse
 ```
 
 ## Kubernetes: Extra Optional Exercises
+
+[Direct link to optional exercises](https://azurecitadel.github.io/labs/kubernetes/extra/)
 
 You can try out any of the optional exercises on your own.
 
