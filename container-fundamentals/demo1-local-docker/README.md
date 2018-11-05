@@ -77,3 +77,17 @@ Cleanup:
 docker rm -f webapp
 ```
 
+Tag image:
+
+```
+docker tag webapp-linux:latest azurecontainerdemos/webapp-linux:v1.0.1
+```
+
+Push image to Docker Hub:
+
+```
+docker push azurecontainerdemos/webapp-linux:v1.0.1
+```
+
+Fallback for pushed image - use `azurecontainerdemos/webapp-linux:v1.0.0` which is already pushed.
+
