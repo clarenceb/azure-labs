@@ -63,7 +63,7 @@ kubectl get pods -l app=webapp
 ## Kill a pod
 
 ```
-kubectl delete <pod_name>
+kubectl delete pod/<pod_name>
 
 kubectl get pods -l app=webapp
 ```
