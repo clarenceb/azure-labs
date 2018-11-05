@@ -120,7 +120,7 @@ Then press `CTRL+C` to stop the port forwarding.
 
 ## Kubernetes: Module 4 - Services & Networking - 15 mins
 
-[Direct linkj to module 4](https://azurecitadel.github.io/labs/kubernetes/part4/)
+[Direct link to module 4](https://azurecitadel.github.io/labs/kubernetes/part4/)
 
 ### Create Service for Data API
 
@@ -162,7 +162,7 @@ You can try out any of the optional exercises on your own.
 
 ### Extra Exercise - Ingress Routing, Ingress Controllers, Cert-Manager
 
-If you prefer, you can try this extra one which will introduce the Ingress object and TLS termination so you can get a friendly URL for your Smilr app and have that endpoint run over SSL/TLS and be trusted by the browser!
+If you prefer, you can try this extra exercise (not part of the linked kubernetes lab) which will introduce the Ingress object and TLS termination so you can get a friendly URL for your Smilr app and have that endpoint run over SSL/TLS and be trusted by the browser!
 
 Follow the instructions at [Create an HTTPS ingress controller on Azure Kubernetes Service (AKS)](https://docs.microsoft.com/en-us/azure/aks/ingress-tls) as a guide and adapt as necessary for your Smilr app.
 
