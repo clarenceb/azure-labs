@@ -160,11 +160,26 @@ az aks browse -g $group -n aks-cluster --enable-cloud-console-aks-browse
 
 You can try out any of the optional exercises on your own.
 
-### Extra Exercise - Ingress Routing, Ingress Controllers, Cert-Manager
+### Extra Exercise 1 - Ingress Routing, Ingress Controllers, Cert-Manager
 
 If you prefer, you can try this extra exercise (not part of the linked kubernetes lab) which will introduce the Ingress object and TLS termination so you can get a friendly URL for your Smilr app and have that endpoint run over SSL/TLS and be trusted by the browser!
 
 Follow the instructions at [Create an HTTPS ingress controller on Azure Kubernetes Service (AKS)](https://docs.microsoft.com/en-us/azure/aks/ingress-tls) as a guide and adapt as necessary for your Smilr app.
+
+### Extra Exercise 2 - Deploy to AKS via Azure DevOps Pipelines
+
+Sign up for Azure DevOps - https://dev.azure.com
+
+Create a new organisation and project.
+
+Import the GitHub repo (https://github.com/benc-uk/smilr) into an Azure Repo.
+
+* Set up a build for the `frontend` container image.
+* Push this image to your Azure Container Registry.
+* Setup a Release pipeline to deploy the frontend service via a helm chart (one exists in the git repo)
+* Write a simple post deploy test to verify the frontend was successfully deployed
+
+Import 
 
 Good luck!
 
